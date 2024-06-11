@@ -1,4 +1,4 @@
-module github.com/edgexfoundry/device-modbus-go/simulator
+module github.com/agile-edgex/device-modbus-go/simulator
 
 require (
 	github.com/goburrow/modbus v0.1.0 // indirect

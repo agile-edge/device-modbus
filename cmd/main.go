@@ -7,10 +7,10 @@
 package main
 
 import (
-	"github.com/edgexfoundry/device-sdk-go/v3/pkg/startup"
+	"github.com/agile-edgex/device-sdk-go/v3/pkg/startup"
 
-	"github.com/edgexfoundry/device-modbus-go"
-	"github.com/edgexfoundry/device-modbus-go/internal/driver"
+	"github.com/agile-edgex/device-modbus-go"
+	"github.com/agile-edgex/device-modbus-go/internal/driver"
 )
 
 const (

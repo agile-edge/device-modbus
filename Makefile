@@ -13,9 +13,9 @@ VERSION=$(shell cat ./VERSION 2>/dev/null || echo 0.0.0)
 
 GIT_SHA=$(shell git rev-parse HEAD)
 
-SDKVERSION=$(shell cat ./go.mod | grep 'github.com/edgexfoundry/device-sdk-go/v3 v' | awk '{print $$2}')
-GOFLAGS=-ldflags "-X github.com/edgexfoundry/device-modbus-go.Version=$(VERSION) \
-                  -X github.com/edgexfoundry/device-sdk-go/v3/internal/common.SDKVersion=$(SDKVERSION)" \
+SDKVERSION=$(shell cat ./go.mod | grep 'github.com/agile-edgex/device-sdk-go/v3 v' | awk '{print $$2}')
+GOFLAGS=-ldflags "-X github.com/agile-edgex/device-modbus-go.Version=$(VERSION) \
+                  -X github.com/agile-edgex/device-sdk-go/v3/internal/common.SDKVersion=$(SDKVERSION)" \
                    -trimpath -mod=readonly
 
 build: $(MICROSERVICES)
@@ -54,8 +54,8 @@ docker_device_modbus_go:
 	docker build \
 		--build-arg ADD_BUILD_TAGS=$(ADD_BUILD_TAGS) \
 		--label "git_sha=$(GIT_SHA)" \
-		-t edgexfoundry/device-modbus:$(GIT_SHA) \
-		-t edgexfoundry/device-modbus:$(VERSION)-dev \
+		-t agile-edgex/device-modbus:$(GIT_SHA) \
+		-t agile-edgex/device-modbus:$(VERSION)-dev \
 		.
 
 docker-nats:
