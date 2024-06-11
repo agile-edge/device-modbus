@@ -1,5 +1,7 @@
 .PHONY: build test unittest lint clean prepare update docker
 
+GO_PROXY=https://goproxy.cn,direct
+
 MICROSERVICES=cmd/device-modbus
 
 .PHONY: $(MICROSERVICES)
@@ -9,12 +11,14 @@ ARCH=$(shell uname -m)
 DOCKERS=docker_device_modbus_go
 .PHONY: $(DOCKERS)
 
-VERSION=$(shell cat ./VERSION 2>/dev/null || echo 0.0.0)
+VERSION=$(shell (git branch --show-current | sed 's/^release\///' | sed 's/^v//') || echo 0.0.0)
+#DOCKER_TAG=$(VERSION)-$(shell git log -1 --format=%h)
+DOCKER_TAG=$(VERSION)
 
 GIT_SHA=$(shell git rev-parse HEAD)
 
 SDKVERSION=$(shell cat ./go.mod | grep 'github.com/agile-edgex/device-sdk-go/v3 v' | awk '{print $$2}')
-GOFLAGS=-ldflags "-X github.com/agile-edgex/device-modbus-go.Version=$(VERSION) \
+GOFLAGS=-ldflags "-X github.com/agile-edgex/device-modbus.Version=$(VERSION) \
                   -X github.com/agile-edgex/device-sdk-go/v3/internal/common.SDKVersion=$(SDKVERSION)" \
                    -trimpath -mod=readonly
 
@@ -53,13 +57,10 @@ docker: $(DOCKERS)
 docker_device_modbus_go:
 	docker build \
 		--build-arg ADD_BUILD_TAGS=$(ADD_BUILD_TAGS) \
+		--build-arg GO_PROXY=$(GO_PROXY) \
 		--label "git_sha=$(GIT_SHA)" \
-		-t agile-edgex/device-modbus:$(GIT_SHA) \
-		-t agile-edgex/device-modbus:$(VERSION)-dev \
+		-t agile-edgex/device-modbus:$(DOCKER_TAG) \
 		.
 
 docker-nats:
 	make -e ADD_BUILD_TAGS=include_nats_messaging docker
-
-vendor:
-	CGO_ENABLED=0 go mod vendor

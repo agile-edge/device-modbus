@@ -13,36 +13,24 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
-ARG BASE=golang:1.21-alpine3.18
-FROM ${BASE} AS builder
+FROM golang:1.21-bookworm AS builder
 
 ARG ADD_BUILD_TAGS=""
-ARG MAKE="make -e ADD_BUILD_TAGS=$ADD_BUILD_TAGS build"
 
-RUN apk add --update --no-cache make git openssh
-
-# set the working directory
-WORKDIR /device-modbus-go
-
-COPY go.mod vendor* ./
-RUN [ ! -d "vendor" ] && go mod download all || echo "skipping..."
+WORKDIR /device-modbus
 
 COPY . .
+ARG GO_PROXY="https://goproxy.cn,direct"
+ENV GOPROXY=$GO_PROXY
+ARG MAKE="make -e ADD_BUILD_TAGS=$ADD_BUILD_TAGS build"
 RUN ${MAKE}
 
-FROM alpine:3.18
+#Next image - Copy built Go binary into new workspace
+FROM debian:bookworm-slim
 
-LABEL license='SPDX-License-Identifier: Apache-2.0' \
-      copyright='Copyright (c) 2019-2021: IoTech Ltd'
-
-RUN apk add --update --no-cache dumb-init
-# Ensure using latest versions of all installed packages to avoid any recent CVEs
-RUN apk --no-cache upgrade
-
-COPY --from=builder /device-modbus-go/cmd /
-COPY --from=builder /device-modbus-go/LICENSE /
-COPY --from=builder /device-modbus-go/Attribution.txt /
+COPY --from=builder /device-modbus/cmd /
+COPY --from=builder /device-modbus/LICENSE /
+COPY --from=builder /device-modbus/Attribution.txt /
 
 EXPOSE 59901
 

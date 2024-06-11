@@ -14,7 +14,7 @@ import (
 	"strings"
 	"time"
 
-	MODBUS "github.com/goburrow/modbus"
+	MODBUS "github.com/agile-edgex/device-modbus/pkg/modbus"
 )
 
 // ModbusClient is used for connecting the device and read/write value

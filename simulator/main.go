@@ -17,7 +17,7 @@ import (
 	"sync"
 	"syscall"
 
-	"github.com/goburrow/serial"
+	"github.com/agile-edgex/device-modbus/pkg/serial"
 	"github.com/tbrandon/mbserver"
 )
 

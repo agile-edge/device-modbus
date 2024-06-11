@@ -1,11 +1,10 @@
-module github.com/agile-edgex/device-modbus-go
+module github.com/agile-edgex/device-modbus
 
 go 1.21
 
 require (
 	github.com/agile-edgex/device-sdk-go/v3 v3.1.0
 	github.com/agile-edgex/go-mod-core-contracts/v3 v3.1.0
-	github.com/goburrow/modbus v0.1.0
 	github.com/spf13/cast v1.5.1
 	github.com/stretchr/testify v1.9.0
 )
@@ -32,7 +31,6 @@ require (
 	github.com/go-playground/universal-translator v0.18.1 // indirect
 	github.com/go-playground/validator/v10 v10.15.5 // indirect
 	github.com/go-redis/redis/v7 v7.3.0 // indirect
-	github.com/goburrow/serial v0.1.0 // indirect
 	github.com/golang-jwt/jwt v3.2.2+incompatible // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/gorilla/websocket v1.5.0 // indirect
