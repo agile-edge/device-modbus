@@ -141,11 +141,11 @@ func TransformDataBytesToResult(req *models.CommandRequest, dataBytes []byte, co
 		case common.ValueTypeInt16:
 			raw := int16(binary.BigEndian.Uint16(dataBytes))
 			res = float32(raw)
-			driver.Logger.Debugf("According to the rawType %s and the value type %s, convert integer %d to float %v ", INT16, FLOAT32, res, result.ValueToString())
+			driver.Logger.Debugf("According to the rawType %s and the value type %s, convert integer %d to float %v ", INT16, FLOAT32, raw, res)
 		case common.ValueTypeUint16:
 			raw := binary.BigEndian.Uint16(dataBytes)
 			res = float32(raw)
-			driver.Logger.Debugf("According to the rawType %s and the value type %s, convert integer %d to float %v ", UINT16, FLOAT32, res, result.ValueToString())
+			driver.Logger.Debugf("According to the rawType %s and the value type %s, convert integer %d to float %v ", UINT16, FLOAT32, raw, res)
 		}
 	case common.ValueTypeFloat64:
 		switch commandInfo.RawType {
@@ -155,15 +155,15 @@ func TransformDataBytesToResult(req *models.CommandRequest, dataBytes []byte, co
 		case common.ValueTypeInt16:
 			raw := int16(binary.BigEndian.Uint16(dataBytes))
 			res = float64(raw)
-			driver.Logger.Debugf("According to the rawType %s and the value type %s, convert integer %d to float %v ", INT16, FLOAT64, res, result.ValueToString())
+			driver.Logger.Debugf("According to the rawType %s and the value type %s, convert integer %d to float %v ", INT16, FLOAT64, raw, res)
 		case common.ValueTypeUint16:
 			raw := binary.BigEndian.Uint16(dataBytes)
 			res = float64(raw)
-			driver.Logger.Debugf("According to the rawType %s and the value type %s, convert integer %d to float %v ", UINT16, FLOAT64, res, result.ValueToString())
+			driver.Logger.Debugf("According to the rawType %s and the value type %s, convert integer %d to float %v ", UINT16, FLOAT64, raw, res)
 		case common.ValueTypeInt32:
 			raw := int32(binary.BigEndian.Uint32(swap32BitDataBytes(dataBytes, commandInfo.IsByteSwap, commandInfo.IsWordSwap)))
 			res = float64(raw)
-			driver.Logger.Debugf("According to the rawType %s and the value type %s, convert integer %d to float %v ", INT32, FLOAT64, res, result.ValueToString())
+			driver.Logger.Debugf("According to the rawType %s and the value type %s, convert integer %d to float %v ", INT32, FLOAT64, raw, res)
 		}
 	case common.ValueTypeBool:
 		res = false

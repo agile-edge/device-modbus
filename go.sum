@@ -9,8 +9,8 @@ github.com/agile-edgex/go-mod-bootstrap/v3 v3.1.0 h1:t5odmT2xDFanwK9TiCvrNR1HuCD
 github.com/agile-edgex/go-mod-bootstrap/v3 v3.1.0/go.mod h1:kqp8/rNhv0p0AsRKraYJZrdz2KKT6uZ//oS8TStozfc=
 github.com/agile-edgex/go-mod-configuration/v3 v3.1.0 h1:NQmLEslzjcvBWL10jY9DfscE0wtvx54VL1UnzBX7IQQ=
 github.com/agile-edgex/go-mod-configuration/v3 v3.1.0/go.mod h1:4gyUhgtfqoYI0TB3HkdXg+wNDy2tn17hFxJtE0h/ihA=
-github.com/agile-edgex/go-mod-core-contracts/v3 v3.1.0 h1:IhI3M1XTNXusCOHRI0oeH65COixiyCVgsP8jsD9vebs=
-github.com/agile-edgex/go-mod-core-contracts/v3 v3.1.0/go.mod h1:xrVIIQUeiNry9JIW4QRvgReCeEQqnu69fiRGOYT+0gs=
+github.com/agile-edgex/go-mod-core-contracts/v3 v3.1.1 h1:bOLywZdeGimPOJmdvn/rY2exBkiorT3s/wWjt1UqwOg=
+github.com/agile-edgex/go-mod-core-contracts/v3 v3.1.1/go.mod h1:xrVIIQUeiNry9JIW4QRvgReCeEQqnu69fiRGOYT+0gs=
 github.com/agile-edgex/go-mod-messaging/v3 v3.1.0 h1:pJrEdrRpez6tGhzun0wzvEF+F7UY/C+20RV0y2NCKD4=
 github.com/agile-edgex/go-mod-messaging/v3 v3.1.0/go.mod h1:+M6yr2rE9MZxXuYFh63rMPWeril2uQHmUDqB7etetWo=
 github.com/agile-edgex/go-mod-registry/v3 v3.1.0 h1:kANGbFE+A+ReVBvnxRXuR+6c4FCDEjbaYAcNLKQdkO0=

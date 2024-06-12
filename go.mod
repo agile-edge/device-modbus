@@ -78,3 +78,5 @@ require (
 	google.golang.org/protobuf v1.34.1 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
+
+replace github.com/agile-edgex/go-mod-core-contracts/v3 v3.1.0 => github.com/agile-edgex/go-mod-core-contracts/v3 v3.1.1
