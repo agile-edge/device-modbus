@@ -91,7 +91,7 @@ func (d *Driver) lockableAddress(info *ConnectionInfo) string {
 func (d *Driver) HandleReadCommands(deviceName string, protocols map[string]models.ProtocolProperties, reqs []sdkModel.CommandRequest) (responses []*sdkModel.CommandValue, err error) {
 	connectionInfo, err := createConnectionInfo(protocols)
 	if err != nil {
-		driver.Logger.Errorf("Fail to create read command connection info. err:%v \n", err)
+		driver.Logger.Errorf("Fail to create read command connection info. err:%v", err)
 		return responses, err
 	}
 
@@ -107,13 +107,13 @@ func (d *Driver) HandleReadCommands(deviceName string, protocols map[string]mode
 	// create device client and open connection
 	deviceClient, err = NewDeviceClient(connectionInfo)
 	if err != nil {
-		driver.Logger.Infof("Read command NewDeviceClient failed. err:%v \n", err)
+		driver.Logger.Infof("Read command NewDeviceClient failed. err:%v", err)
 		return responses, err
 	}
 
 	err = deviceClient.OpenConnection()
 	if err != nil {
-		driver.Logger.Infof("Read command OpenConnection failed. err:%v \n", err)
+		driver.Logger.Infof("Read command OpenConnection failed. err:%v", err)
 		return responses, err
 	}
 
@@ -123,7 +123,7 @@ func (d *Driver) HandleReadCommands(deviceName string, protocols map[string]mode
 	for i, req := range reqs {
 		res, err := handleReadCommandRequest(deviceClient, req)
 		if err != nil {
-			driver.Logger.Infof("Read command failed. Cmd:%v err:%v \n", req.DeviceResourceName, err)
+			driver.Logger.Infof("Read command failed. Cmd:%v err:%v", req.DeviceResourceName, err)
 			return responses, err
 		}
 
@@ -153,7 +153,7 @@ func handleReadCommandRequest(deviceClient DeviceClient, req sdkModel.CommandReq
 	if err != nil {
 		return result, err
 	} else {
-		driver.Logger.Infof("Read command finished. Cmd:%v, %v \n", req.DeviceResourceName, result)
+		driver.Logger.Infof("Read command finished. Cmd:%v, %v", req.DeviceResourceName, result)
 	}
 
 	return result, nil
@@ -162,7 +162,7 @@ func handleReadCommandRequest(deviceClient DeviceClient, req sdkModel.CommandReq
 func (d *Driver) HandleWriteCommands(deviceName string, protocols map[string]models.ProtocolProperties, reqs []sdkModel.CommandRequest, params []*sdkModel.CommandValue) error {
 	connectionInfo, err := createConnectionInfo(protocols)
 	if err != nil {
-		driver.Logger.Errorf("Fail to create write command connection info. err:%v \n", err)
+		driver.Logger.Errorf("Fail to create write command connection info. err:%v", err)
 		return err
 	}
 
@@ -217,7 +217,7 @@ func handleWriteCommandRequest(deviceClient DeviceClient, req sdkModel.CommandRe
 		return fmt.Errorf("handle write command request failed, err: %v", err)
 	}
 
-	driver.Logger.Infof("Write command finished. Cmd:%v \n", req.DeviceResourceName)
+	driver.Logger.Infof("Write command finished. Cmd:%v", req.DeviceResourceName)
 	return nil
 }
 
