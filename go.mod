@@ -3,8 +3,8 @@ module github.com/agile-edgex/device-modbus
 go 1.21
 
 require (
-	github.com/agile-edgex/device-sdk-go/v3 v3.1.0
-	github.com/agile-edgex/go-mod-core-contracts/v3 v3.1.0
+	github.com/agile-edgex/device-sdk-go/v3 v3.1.2
+	github.com/agile-edgex/go-mod-core-contracts/v3 v3.1.2
 	github.com/spf13/cast v1.5.1
 	github.com/stretchr/testify v1.9.0
 )
@@ -12,11 +12,11 @@ require (
 require (
 	github.com/Microsoft/go-winio v0.6.1 // indirect
 	github.com/OneOfOne/xxhash v1.2.8 // indirect
-	github.com/agile-edgex/go-mod-bootstrap/v3 v3.1.0 // indirect
-	github.com/agile-edgex/go-mod-configuration/v3 v3.1.0 // indirect
-	github.com/agile-edgex/go-mod-messaging/v3 v3.1.0 // indirect
-	github.com/agile-edgex/go-mod-registry/v3 v3.1.0 // indirect
-	github.com/agile-edgex/go-mod-secrets/v3 v3.1.0 // indirect
+	github.com/agile-edgex/go-mod-bootstrap/v3 v3.1.2 // indirect
+	github.com/agile-edgex/go-mod-configuration/v3 v3.1.2 // indirect
+	github.com/agile-edgex/go-mod-messaging/v3 v3.1.2 // indirect
+	github.com/agile-edgex/go-mod-registry/v3 v3.1.2 // indirect
+	github.com/agile-edgex/go-mod-secrets/v3 v3.1.2 // indirect
 	github.com/armon/go-metrics v0.4.1 // indirect
 	github.com/cenkalti/backoff v2.2.1+incompatible // indirect
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
@@ -79,4 +79,4 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-replace github.com/agile-edgex/go-mod-core-contracts/v3 v3.1.0 => github.com/agile-edgex/go-mod-core-contracts/v3 v3.1.1
+// replace github.com/agile-edgex/go-mod-core-contracts/v3 v3.1.2 => github.com/agile-edgex/go-mod-core-contracts/v3 v3.1.2
