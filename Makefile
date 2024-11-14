@@ -1,5 +1,6 @@
 .PHONY: build test unittest lint clean prepare update docker
 
+PLATFORM=linux/amd64,linux/arm64,linux/arm/v7
 GO_PROXY=https://goproxy.cn,direct
 
 MICROSERVICES=cmd/device-modbus
@@ -55,11 +56,21 @@ clean:
 docker: $(DOCKERS)
 
 docker_device_modbus_go:
-	docker build \
+	docker buildx build --platform $(PLATFORM) \
 		--build-arg ADD_BUILD_TAGS=$(ADD_BUILD_TAGS) \
 		--build-arg GO_PROXY=$(GO_PROXY) \
 		--label "git_sha=$(GIT_SHA)" \
-		-t agile-edgex/device-modbus:$(DOCKER_TAG) \
+		--push \
+		-t magicletters/device-modbus:$(DOCKER_TAG) \
+		.
+
+	docker buildx build --platform $(PLATFORM) \
+		--build-arg ADD_BUILD_TAGS=$(ADD_BUILD_TAGS) \
+		--build-arg GO_PROXY=$(GO_PROXY) \
+		--label "git_sha=$(GIT_SHA)" \
+		--push \
+		-f Dockerfile.alpine
+		-t magicletters/device-modbus:$(DOCKER_TAG)-alpine \
 		.
 
 docker-nats:
