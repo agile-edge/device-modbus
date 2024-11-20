@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-FROM golang:1.21-bookworm AS builder
+FROM golang:1.23-bookworm AS builder
 
 ARG ADD_BUILD_TAGS=""
 
@@ -22,8 +22,8 @@ WORKDIR /device-modbus
 ARG GO_PROXY="https://goproxy.cn,direct"
 ENV GOPROXY=$GO_PROXY
 
-COPY go.mod ./
-RUN go mod download all
+COPY go.* ./
+RUN go mod download
 
 COPY . .
 ARG MAKE="make -e ADD_BUILD_TAGS=$ADD_BUILD_TAGS build"
@@ -34,8 +34,8 @@ FROM debian:bookworm-slim
 
 # 设置环境变量以避免交互式提示
 ENV DEBIAN_FRONTEND=noninteractive
-# Ensure using latest versions of all installed packages to avoid any recent CVEs
-RUN apt update && \
+RUN sed -i 's|http://deb.debian.org|https://mirrors.tuna.tsinghua.edu.cn|g' /etc/apt/sources.list.d/debian.sources && \
+    apt update && \
     apt upgrade -y && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
