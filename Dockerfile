@@ -22,8 +22,8 @@ WORKDIR /device-modbus
 ARG GO_PROXY="https://goproxy.cn,direct"
 ENV GOPROXY=$GO_PROXY
 
-COPY go.mod ./
-RUN go mod download all
+COPY go.* ./
+RUN go mod download
 
 COPY . .
 ARG MAKE="make -e ADD_BUILD_TAGS=$ADD_BUILD_TAGS build"
