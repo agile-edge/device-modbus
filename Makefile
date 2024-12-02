@@ -61,7 +61,7 @@ docker_device_modbus_go:
 		--build-arg GO_PROXY=$(GO_PROXY) \
 		--label "git_sha=$(GIT_SHA)" \
 		--push \
-		-t ccr.ccs.tencentyun.com/agile-edgex/device-modbus:$(DOCKER_TAG) \
+		-t ccr.ccs.tencentyun.com/agile-edge/device-modbus:$(DOCKER_TAG) \
 		.
 
 	docker buildx build --platform $(PLATFORM) \
@@ -70,7 +70,7 @@ docker_device_modbus_go:
 		--label "git_sha=$(GIT_SHA)" \
 		--push \
 		-f Dockerfile.alpine
-		-t ccr.ccs.tencentyun.com/agile-edgex/device-modbus:$(DOCKER_TAG)-alpine \
+		-t ccr.ccs.tencentyun.com/agile-edge/device-modbus:$(DOCKER_TAG)-alpine \
 		.
 
 docker-nats:
