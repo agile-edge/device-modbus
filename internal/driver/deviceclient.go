@@ -14,9 +14,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/agile-edgex/device-sdk-go/v3/pkg/models"
-	"github.com/agile-edgex/go-mod-core-contracts/v3/common"
-	"github.com/agile-edgex/go-mod-core-contracts/v3/errors"
+	"github.com/agile-edge/device-sdk-go/v3/pkg/models"
+	"github.com/agile-edge/go-mod-core-contracts/v3/common"
+	"github.com/agile-edge/go-mod-core-contracts/v3/errors"
 )
 
 // DeviceClient is a interface for modbus client lib to implementation

@@ -1,4 +1,4 @@
-# serial [![Build Status](https://travis-ci.org/goburrow/serial.svg?branch=master)](https://travis-ci.org/goburrow/serial) [![GoDoc](https://godoc.org/github.com/agile-edgex/device-modbus/pkg/serial?status.svg)](https://godoc.org/github.com/agile-edgex/device-modbus/pkg/serial)
+# serial [![Build Status](https://travis-ci.org/goburrow/serial.svg?branch=master)](https://travis-ci.org/goburrow/serial) [![GoDoc](https://godoc.org/github.com/agile-edge/device-modbus/pkg/serial?status.svg)](https://godoc.org/github.com/agile-edge/device-modbus/pkg/serial)
 ## Example
 ```go
 package main
@@ -6,7 +6,7 @@ package main
 import (
 	"log"
 
-	"github.com/agile-edgex/device-modbus/pkg/serial"
+	"github.com/agile-edge/device-modbus/pkg/serial"
 )
 
 func main() {

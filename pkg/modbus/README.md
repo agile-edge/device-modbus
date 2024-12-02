@@ -1,4 +1,4 @@
-go modbus [![Build Status](https://travis-ci.org/goburrow/modbus.svg?branch=master)](https://travis-ci.org/goburrow/modbus) [![GoDoc](https://godoc.org/github.com/agile-edgex/device-modbus/pkg/modbus?status.svg)](https://godoc.org/github.com/agile-edgex/device-modbus/pkg/modbus)
+go modbus [![Build Status](https://travis-ci.org/goburrow/modbus.svg?branch=master)](https://travis-ci.org/goburrow/modbus) [![GoDoc](https://godoc.org/github.com/agile-edge/device-modbus/pkg/modbus?status.svg)](https://godoc.org/github.com/agile-edge/device-modbus/pkg/modbus)
 =========
 Fault-tolerant, fail-fast implementation of Modbus protocol in Go.
 

@@ -10,7 +10,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/agile-edgex/device-modbus/pkg/serial"
+	"github.com/agile-edge/device-modbus/pkg/serial"
 )
 
 const (

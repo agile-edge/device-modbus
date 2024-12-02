@@ -10,7 +10,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/agile-edgex/go-mod-core-contracts/v3/models"
+	"github.com/agile-edge/go-mod-core-contracts/v3/models"
 )
 
 func TestCreateRTUConnectionInfo_unitID255(t *testing.T) {

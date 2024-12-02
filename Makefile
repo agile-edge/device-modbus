@@ -18,9 +18,9 @@ DOCKER_TAG=$(VERSION)
 
 GIT_SHA=$(shell git rev-parse HEAD)
 
-SDKVERSION=$(shell cat ./go.mod | grep 'github.com/agile-edgex/device-sdk-go/v3 v' | awk '{print $$2}')
-GOFLAGS=-ldflags "-X github.com/agile-edgex/device-modbus.Version=$(VERSION) \
-                  -X github.com/agile-edgex/device-sdk-go/v3/internal/common.SDKVersion=$(SDKVERSION)" \
+SDKVERSION=$(shell cat ./go.mod | grep 'github.com/agile-edge/device-sdk-go/v3 v' | awk '{print $$2}')
+GOFLAGS=-ldflags "-X github.com/agile-edge/device-modbus.Version=$(VERSION) \
+                  -X github.com/agile-edge/device-sdk-go/v3/internal/common.SDKVersion=$(SDKVERSION)" \
                    -trimpath -mod=readonly
 
 build: $(MICROSERVICES)

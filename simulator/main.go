@@ -17,7 +17,7 @@ import (
 	"sync"
 	"syscall"
 
-	"github.com/agile-edgex/device-modbus/pkg/serial"
+	"github.com/agile-edge/device-modbus/pkg/serial"
 	"github.com/tbrandon/mbserver"
 )
 
