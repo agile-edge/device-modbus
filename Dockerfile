@@ -51,4 +51,4 @@ RUN mkdir -p /var/log/agile-edge && chown -R 1000:1000 /var/log/agile-edge
 USER 1000:1000
 
 ENTRYPOINT ["/device-modbus"]
-CMD ["--cp=consul://edgex-core-consul:8500", "--registry"]
+CMD ["--cp=consul://core-consul:8500", "--registry"]
