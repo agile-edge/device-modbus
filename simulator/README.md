@@ -2,9 +2,9 @@
 Modbus Simulator is used to create mock Modbus device for testing purpose. 
 
 ## Build docker image
-The docker image built with git branch https://github.com/edgexfoundry/device-modbus-go/tree/edgex-modbus-simulator
+The docker image built with git branch https://github.com/agile-edge/device-modbus-go/tree/edgex-modbus-simulator
 ```
-git clone -b edgex-modbus-simulator git@github.com:edgexfoundry/device-modbus-go.git
+git clone -b edgex-modbus-simulator git@github.com:agile-edge/device-modbus-go.git
 docker build -t modbus-simulator .
 ```
 

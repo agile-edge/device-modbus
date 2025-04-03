@@ -11,8 +11,8 @@ import (
 	"strings"
 	"testing"
 
-	sdkModel "github.com/edgexfoundry/device-sdk-go/v4/pkg/models"
-	"github.com/edgexfoundry/go-mod-core-contracts/v4/clients/logger"
+	sdkModel "github.com/agile-edge/device-sdk-go/v4/pkg/models"
+	"github.com/agile-edge/go-mod-core-contracts/v4/clients/logger"
 
 	"github.com/stretchr/testify/assert"
 )

@@ -22,9 +22,9 @@ ifeq ($(ENABLE_FULL_RELRO), true)
 	ENABLE_FULL_RELRO_GOFLAGS = -bindnow
 endif
 
-SDKVERSION=$(shell cat ./go.mod | grep 'github.com/edgexfoundry/device-sdk-go/v4 v' | awk '{print $$2}')
-GOFLAGS=-ldflags "-s -w -X github.com/edgexfoundry/device-modbus-go.Version=$(VERSION) \
-                  -X github.com/edgexfoundry/device-sdk-go/v4/internal/common.SDKVersion=$(SDKVERSION) \
+SDKVERSION=$(shell cat ./go.mod | grep 'github.com/agile-edge/device-sdk-go/v4 v' | awk '{print $$2}')
+GOFLAGS=-ldflags "-s -w -X github.com/agile-edge/device-modbus-go.Version=$(VERSION) \
+                  -X github.com/agile-edge/device-sdk-go/v4/internal/common.SDKVersion=$(SDKVERSION) \
                   $(ENABLE_FULL_RELRO_GOFLAGS)" \
                    -trimpath -mod=readonly
 
@@ -68,8 +68,7 @@ docker_device_modbus_go:
 	docker build \
 		--build-arg ADD_BUILD_TAGS=$(ADD_BUILD_TAGS) \
 		--label "git_sha=$(GIT_SHA)" \
-		-t edgexfoundry/device-modbus:$(GIT_SHA) \
-		-t edgexfoundry/device-modbus:$(VERSION)-dev \
+		-t agile-edge/device-modbus:$(VERSION) \
 		.
 
 docker-nats:

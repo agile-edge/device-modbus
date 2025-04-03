@@ -9,7 +9,7 @@ package driver
 import (
 	"testing"
 
-	"github.com/edgexfoundry/go-mod-core-contracts/v4/clients/logger"
+	"github.com/agile-edge/go-mod-core-contracts/v4/clients/logger"
 )
 
 func init() {
